@@ -1,0 +1,10 @@
+# Node modules (if using npm or build tools)
+node_modules/
+
+# Build/dist folder
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db

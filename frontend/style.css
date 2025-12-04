@@ -1,0 +1,189 @@
+/* ===================== Global Reset ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ===================== App Layout ===================== */
+.app {
+    display: flex;
+    height: 100vh;
+    background: #0a0a0a; /* Pure black background */
+    color: #ffc0cb; /* Baby pink text */
+}
+
+/* ===================== Sidebar ===================== */
+.sidebar {
+    width: 250px;
+    background: #181818;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar h1 {
+    font-size: 1.8rem;
+    color: #ff69b4; /* Hot pink for title */
+    margin-bottom: 30px;
+}
+.sidebar h1 span {
+    color: #fff;
+}
+.sidebar nav a {
+    display: block;
+    padding: 10px 0;
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: 500;
+}
+.sidebar nav a.active,
+.sidebar nav a:hover {
+    color: #ffc0cb;
+}
+.playlists {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #b3b3b3;
+}
+.playlists a {
+    display: block;
+    padding: 5px 0;
+    color: #b3b3b3;
+    text-decoration: none;
+}
+.playlists a:hover {
+    color: #ffc0cb;
+}
+
+/* ===================== Main Content ===================== */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+header input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: #282828;
+    color: #ffc0cb;
+}
+header button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background: #ff69b4;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+header button:hover {
+    background: #ff85c1;
+}
+
+/* ===================== Song Grid ===================== */
+.song-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+.song-card {
+    background: #181818;
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.song-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(255,192,203,0.3); /* baby pink glow */
+}
+.song-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.song-card h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #ffc0cb;
+}
+.song-card p {
+    font-size: 0.85rem;
+    color: #b3b3b3;
+}
+
+/* ===================== Mini Player ===================== */
+.mini-player {
+    position: fixed;
+    bottom: 0;
+    left: 250px;
+    right: 0;
+    background: #282828;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+.mini-player.hidden {
+    display: none;
+}
+.mini-player img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.mini-info {
+    flex: 1;
+}
+.mini-info p {
+    font-size: 0.95rem;
+    color: #ffc0cb;
+}
+.controls button {
+    margin-left: 5px;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 5px;
+    background: #ff69b4;
+    cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+}
+.controls button:hover {
+    background: #ff85c1;
+}
+#closePlayer {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* ===================== Scrollbar ===================== */
+.main-content::-webkit-scrollbar {
+    width: 8px;
+}
+.main-content::-webkit-scrollbar-thumb {
+    background: #ff69b4;
+    border-radius: 4px;
+}
+
+/* ===================== Optional Genre Glow ===================== */
+body.genre-pop { background: linear-gradient(135deg, #0a0a0a, #ffb6c1); }
+body.genre-rock { background: linear-gradient(135deg, #0a0a0a, #ff69b4); }
+body.genre-hip-hop { background: linear-gradient(135deg, #0a0a0a, #ff85c1); }
+body.genre-jazz { background: linear-gradient(135deg, #0a0a0a, #ffc0cb); }
+body.genre-classical { background: linear-gradient(135deg, #0a0a0a, #ffb6c1); }

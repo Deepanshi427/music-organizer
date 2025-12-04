@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎵 Music Organizer - Spotify UI</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+  <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h1>Music<span>Pro</span></h1>
+      <nav>
+        <a href="#" class="active">Home</a>
+        <a href="#">Search</a>
+        <a href="#">Your Library</a>
+      </nav>
+     <div class="playlists">
+  <p>Playlists</p>
+  <a href="#" onclick="loadPlaylist('Top Hits')">Top Hits</a>
+  <a href="#" onclick="loadPlaylist('Chill Vibes')">Chill Vibes</a>
+  <a href="#" onclick="loadPlaylist('Workout')">Workout</a>
+</div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <input type="text" id="searchInput" placeholder="Search for songs, artists, albums...">
+        <button id="searchBtn">Search</button>
+        <button id="darkModeBtn">🌙</button>
+      </header>
+
+      <!-- Featured Songs / Grid -->
+      <section id="songList" class="song-grid"></section>
+
+    </main>
+
+    <!-- Mini Player -->
+    <div id="miniPlayer" class="mini-player hidden">
+      <img id="miniAlbum" src="" alt="album cover">
+      <div class="mini-info">
+        <p id="nowPlaying">Now Playing:</p>
+      </div>
+      <audio id="playerAudio" controls></audio>
+      <div class="controls">
+        <button id="prevBtn">⏮️</button>
+        <button id="playPauseBtn">▶️</button>
+        <button id="nextBtn">⏭</button>
+        <button id="shuffleBtn">🔀</button>
+        <button id="repeatBtn">🔁</button>
+      </div>
+      <button id="closePlayer">✖</button>
+    </div>
+
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
